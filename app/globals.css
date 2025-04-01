@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 45 100% 50%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 45 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Tournament bracket specific styles */
+.bracket-connector {
+  @apply border-tournament-gold;
+}
+
+.bracket-line {
+  @apply border-tournament-gold border-2;
+}
+
+.winner-indicator {
+  @apply bg-tournament-gold text-tournament-black font-bold;
+}
+
+.match-card {
+  @apply bg-tournament-black border-tournament-gold/50 border rounded-md shadow-lg transition-all duration-300;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 215, 0, 0.1);
+}
+
+.match-card.completed {
+  @apply border-tournament-gold border-opacity-90;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.15), 0 0 0 1px rgba(255, 215, 0, 0.3);
+}
+
+.match-card.in-progress {
+  @apply border-tournament-gold border-opacity-100;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.25), 0 0 0 1px rgba(255, 215, 0, 0.5);
+}
+
+.match-card.upcoming {
+  @apply border-tournament-gold/30 border-opacity-50;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 215, 0, 0.05);
+}
+
+.team-emoji {
+  @apply flex items-center justify-center text-2xl;
+  width: 2rem;
+  height: 2rem;
+}
+
+@media (max-width: 768px) {
+  .tournament-bracket {
+    @apply flex flex-col gap-4;
+  }
+
+  .bracket-round {
+    @apply flex flex-row overflow-x-auto pb-4;
+  }
+}
+
+/* Bracket connector lines */
+.connector-wrapper {
+  position: absolute;
+  width: 2rem;
+  right: -2rem;
+  top: 50%;
+  z-index: 0;
+}
+
+.connector-horizontal {
+  height: 2px;
+  background-color: rgba(255, 215, 0, 0.5);
+  width: 100%;
+}
+
+.connector-vertical {
+  position: absolute;
+  width: 2px;
+  background-color: rgba(255, 215, 0, 0.5);
+  right: -2rem;
+  z-index: 0;
+}
+
