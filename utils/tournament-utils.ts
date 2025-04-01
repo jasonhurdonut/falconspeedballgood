@@ -28,6 +28,7 @@ export function formatMatchDate(dateString: string | null): string {
 
   const date = new Date(dateString)
   const options: Intl.DateTimeFormatOptions = {
+    timeZone: 'Etc/GMT', 
     weekday: "short",
     month: "short",
     day: "numeric",

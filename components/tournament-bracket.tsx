@@ -20,11 +20,11 @@ export function TournamentBracket({ tournament, isAdmin = false, onEditMatch }: 
               {round.matches.map((match, index) => {
                 // Calculate vertical spacing based on round
                 const spacingMultiplier = Math.pow(2, round.id - 1)
-                const marginTop = round.id > 1 ? `${spacingMultiplier * 6}rem` : "0"
+                const marginTop = round.id > 1 ? (round.id > 2 ? `${spacingMultiplier * 6.75}rem`: `${spacingMultiplier * 4}rem`) : "0"
 
                 // For rounds after the first, add extra spacing to center matches
                 const isFirstMatch = index === 0
-                const firstMatchOffset = round.id > 1 && isFirstMatch ? `${spacingMultiplier * 3}rem` : "0"
+                const firstMatchOffset = round.id > 1 && isFirstMatch ? (round.id > 2 ? (round.id > 3 ? `${spacingMultiplier * 4}rem` : `${spacingMultiplier * 3.25}rem`): `${spacingMultiplier * 2}rem`) : "0"
 
                 return (
                   <div
