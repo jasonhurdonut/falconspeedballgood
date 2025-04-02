@@ -42,15 +42,16 @@ export function Header() {
                 </Button>
               </>
             ) : (
-              <Link href="/login">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-tournament-gold text-tournament-gold hover:bg-tournament-gold hover:text-tournament-black"
-                >
-                  Admin Login
-                </Button>
-              </Link>
+              null
+              // <Link href="/login">
+              //   <Button
+              //     variant="outline"
+              //     size="sm"
+              //     className="border-tournament-gold text-tournament-gold hover:bg-tournament-gold hover:text-tournament-black"
+              //   >
+              //     Admin Login
+              //   </Button>
+              // </Link>
             )}
           </nav>
         </div>
