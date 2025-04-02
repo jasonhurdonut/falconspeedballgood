@@ -14,10 +14,14 @@ export default function Home() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-tournament-gold text-center mb-8">{tournament.name}</h1>
+    <div className="container mx-auto py-8">
+      <div className="px-4 mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-tournament-gold text-center">
+          {tournament.name}
+        </h1>
+      </div>
 
-      <div className="bg-tournament-black/50 p-4 rounded-lg shadow-lg overflow-x-auto">
+      <div className="bg-tournament-black/50 rounded-lg shadow-lg overflow-hidden">
         <TournamentBracket tournament={tournament} />
       </div>
     </div>

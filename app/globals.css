@@ -99,12 +99,24 @@
 }
 
 @media (max-width: 768px) {
-  .tournament-bracket {
-    @apply flex flex-col gap-4;
+  .match-card {
+    min-height: 90px;
+    touch-action: manipulation;
   }
+  
+  .team-emoji {
+    font-size: 1.25rem;
+    min-width: 1.5rem;
+    text-align: center;
+  }
+}
 
-  .bracket-round {
-    @apply flex flex-row overflow-x-auto pb-4;
+/* Improve touch targets */
+@media (max-width: 640px) {
+  button, 
+  [role="button"],
+  .match-card {
+    min-height: 44px;
   }
 }
 
@@ -129,5 +141,29 @@
   background-color: rgba(255, 215, 0, 0.5);
   right: -2rem;
   z-index: 0;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth scroll behavior */
+.tournament-bracket {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fixed column width for mobile */
+@media (max-width: 768px) {
+  .tournament-round {
+    min-width: 280px;
+    max-width: 280px;
+  }
 }
 

@@ -66,20 +66,26 @@ export default function AdminPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-tournament-gold">Tournament Admin</h1>
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-tournament-gold">Tournament Admin</h1>
 
         <Button
           variant="destructive"
           onClick={handleResetTournament}
-          className="bg-red-600 hover:bg-red-700 text-white"
+          className="bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto"
         >
           Reset Tournament
         </Button>
       </div>
 
-      <div className="bg-tournament-black/50 p-4 rounded-lg shadow-lg overflow-x-auto mb-8">
-        <div className="bg-tournament-gold/10 p-4 rounded mb-4 text-sm">
+      <div className="md:hidden mb-4">
+        <div className="bg-tournament-gold/10 p-3 rounded text-sm text-tournament-gold">
+          <p>Tap on a round to view its matches. Tap on a match to edit it.</p>
+        </div>
+      </div>
+
+      <div className="bg-tournament-black/50 p-2 sm:p-4 rounded-lg shadow-lg mb-8">
+        <div className="hidden md:block bg-tournament-gold/10 p-4 rounded mb-4 text-sm">
           <p className="text-tournament-gold">
             Click on any match to update its result. Winners will automatically advance to the next round.
           </p>
