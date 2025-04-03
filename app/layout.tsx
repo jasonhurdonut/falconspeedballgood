@@ -10,8 +10,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Speedball Tournament Bracket",
-  description: "A professional tournament bracket for speedball competitions",
+  title: "Poolesville High School Speedball Tournament Bracket 2025",
+  description: "Poolesville High School 2025 tournament bracket for speedball competitions",
     generator: 'v0.dev'
 }
 
@@ -31,7 +31,7 @@ export default function RootLayout({
                 <main className="flex-1">{children}</main>
                 <footer className="bg-tournament-black border-t border-tournament-gold py-4">
                   <div className="container mx-auto px-4 text-center text-sm text-tournament-gold/70">
-                    © {new Date().getFullYear()} Speedball Tournament Organizer
+                    © {new Date().getFullYear()} PHS Whole School SGA
                   </div>
                 </footer>
               </div>
